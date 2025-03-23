@@ -4,31 +4,38 @@ module.exports = {
     {
       method: "shell.run",
       params: {
+        venv: "env",
+        path: "app",
+        message: [
+          'lms server stop',
+          'lms server start --cors',
+          '{{which("lms")}} unload --all',
+          '{{which("lms")}} get lex-au/Orpheus-3b-FT-Q8_0 -y',
+          '{{which("lms")}} load lex-au/Orpheus-3b-FT-Q8_0 -y'
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
         venv: "env",                // Edit this to customize the venv folder path
         env: { },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "python app.py",    // Edit with your custom commands
+          "python app.py",
         ],
         on: [{
-          // The regular expression pattern to monitor.
-          // When this pattern occurs in the shell terminal, the shell will return,
-          // and the script will go onto the next step.
-          "event": "/http:\/\/\\S+/",   
-
-          // "done": true will move to the next step while keeping the shell alive.
-          // "kill": true will move to the next step after killing the shell.
+          // "event": "/http:\/\/\\S+/",   
+          // "event": "/http:\/\/[0-9.:]+/",
+          "event": "/Web UI available at (http:\/\/localhost:[0-9]+)/",
           "done": true
         }]
       }
     },
     {
-      // This step sets the local variable 'url'.
-      // This local variable will be used in pinokio.js to display the "Open WebUI" tab when the value is set.
       method: "local.set",
       params: {
-        // the input.event is the regular expression match object from the previous step
-        url: "{{input.event[0]}}"
+        url: "{{input.event[1]}}"
       }
     }
   ]

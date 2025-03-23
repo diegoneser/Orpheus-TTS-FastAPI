@@ -4,6 +4,12 @@ module.exports = {
   title: "Orpheus-TTS-FastAPI",
   description: "",
   icon: "icon.png",
+  pre: [{
+    icon: "lmstudio.jpeg",
+    title: "LMStudio",
+    description: "Discover, download, and run local LLMs",
+    href: "https://lmstudio.ai",
+  }],
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
     let running = {

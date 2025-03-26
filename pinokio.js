@@ -4,6 +4,7 @@ module.exports = {
   title: "Orpheus-TTS-FastAPI",
   description: "",
   icon: "icon.png",
+  bitcoin: "bc1prkcu8ff3t37mzle2ek3gfxxde3fh6xufwht9azt6radzzmnz43xsuuukyz",
   pre: [{
     icon: "lmstudio.jpeg",
     title: "LMStudio",

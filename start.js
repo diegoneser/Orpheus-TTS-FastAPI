@@ -41,7 +41,7 @@ module.exports = {
     {
       method: "process.wait",
       params: {
-        uri: "{{local.uri}}"
+        uri: "{{local.temp_url}}"
       }
     },
     {

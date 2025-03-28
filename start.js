@@ -37,6 +37,12 @@ module.exports = {
       params: {
         url: "{{input.event[1]}}"
       }
-    }
+    },
+    {
+      method: "process.wait",
+      params: {
+        uri: "{{local.uri}}"
+      }
+    },
   ]
 }

@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  version: "3.6",
+  version: "3.7",
   title: "Orpheus-TTS-FastAPI",
   description: "",
   icon: "icon.png",

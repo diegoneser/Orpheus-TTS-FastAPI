@@ -35,13 +35,19 @@ module.exports = {
     {
       method: "local.set",
       params: {
-        url: "{{input.event[1]}}"
+        temp_url: "{{input.event[1]}}"
       }
     },
     {
       method: "process.wait",
       params: {
         uri: "{{local.uri}}"
+      }
+    },
+    {
+      method: "local.set",
+      params: {
+        url: "{{local.temp_url}}"
       }
     },
   ]

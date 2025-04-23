@@ -8,7 +8,7 @@ module.exports = {
         "venv": "venv",
         "path": "app",
         "message": [
-          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128"
+          "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128"
         ]
       },
       "next": null
